@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Welcome JSF page</title>
+    </h:head>
+    <h:body>
+        #{helloWorld.message}
+        <hr/>
+        #{prviBean.messageFromSecondBean}
+        <hr/>
+        <h:form>
+            <h:commandButton value="Pređi na drugi sajt" action="drugiSajt"/>
+        </h:form>
+        <hr/>
+        <h:form>
+            <h:commandLink value="Pređi na web shop stranicu" action="#{navigationController.moveToWebShopPage()}"/>
+        </h:form>
+        <hr/>
+        <h:form>
+            <h:outputText value="Uslovna navigacija pozivom jedne te iste metode"/>
+            <br/>
+            <h:commandButton value="Web sajt 1" action="#{navigationController.showPage()}">
+                <f:param name="pageId" value="1"/>
+            </h:commandButton>
+            <br/>
+            <h:commandButton value="Web sajt 2" action="#{navigationController.showPage()}">
+                <f:param name="pageId" value="2"/>
+            </h:commandButton>
+            <br/>
+            <h:commandButton value="Web sajt 3" action="#{navigationController.showPage()}">
+                <f:param name="pageId" value="3"/>
+            </h:commandButton>
+        </h:form>
+    </h:body>
+    <hr/>
+    Login page posjeti<br/>
+    <h:outputLink value="faces/loginForma.xhtml">Login Forma</h:outputLink>
+</html>
+
